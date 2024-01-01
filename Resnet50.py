@@ -188,8 +188,10 @@ def ResNet50(input_shape, outputClasses):
     X = Flatten()(X)
     X = Dense(512, activation='relu', name='fc_rd1', 
             kernel_initializer=glorot_uniform(seed=101))(X)
-    X = Dense(128, activation='sigmoid', name='fc_rd2', 
+    X = BatchNormalization(name= 'fc_db_rd1')(X)
+    X = Dense(128, activation='relu', name='fc_rd2', 
             kernel_initializer=glorot_uniform(seed=101))(X)
+    X = BatchNormalization(name='fc_db_rd2')(X)
     X = Dense(outputClasses, activation='softmax', name='fc' + str(outputClasses), 
             kernel_initializer=glorot_uniform(seed=101))(X)
 
