@@ -29,9 +29,9 @@ def create_image_path_ds(txt_file, img_folder):
     v = tf.data.Dataset.from_tensor_slices(validation)
     
     if('same' in txt_filename):
-        l = tf.data.Dataset.from_tensor_slices(tf.ones(len(anchor)))
-    elif('diff' in txt_filename):
         l = tf.data.Dataset.from_tensor_slices(tf.zeros(len(anchor)))
+    elif('diff' in txt_filename):
+        l = tf.data.Dataset.from_tensor_slices(tf.ones(len(anchor)))
     ds = tf.data.Dataset.zip((a,v, l))
     return ds
 
