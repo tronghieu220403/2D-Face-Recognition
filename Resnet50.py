@@ -2,12 +2,12 @@
 import numpy as np
 import random
 
-from tensorflow.keras.initializers import glorot_uniform
-from tensorflow.keras.layers import Input, Add, Dense, Activation, ZeroPadding2D, BatchNormalization, Normalization  
-from tensorflow.keras.layers import Flatten, Conv2D, AveragePooling2D, MaxPooling2D
-from tensorflow.keras.models import Model
-from tensorflow.keras.applications.imagenet_utils import preprocess_input
-from tensorflow.keras.preprocessing import image
+from keras.initializers import glorot_uniform
+from keras.layers import Input, Add, Dense, Activation, ZeroPadding2D, BatchNormalization, Normalization  
+from keras.layers import Flatten, Conv2D, AveragePooling2D, MaxPooling2D
+from keras.models import Model
+from keras.applications.imagenet_utils import preprocess_input
+from keras.preprocessing import image
 from matplotlib.pyplot import imshow
 
 
